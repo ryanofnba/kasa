@@ -1,6 +1,20 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+  Route,
+  Router,
+  IndexRoute,
+  hashHistory
+} from 'react-router';
+import { Provider } from 'react-redux';
+
+import Main from 'Main';
+import Home from 'Home';
+import About from 'About';
+import Applications from 'Applications';
+import Groups from 'Groups';
+import People from 'People';
+
 
 // Load foundation
 $(document).foundation();
@@ -9,6 +23,14 @@ $(document).foundation();
 require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
-  <p>Boilerplate 3 Project</p>,
+  <Router history={hashHistory}>
+    <Route path="/" component={Main}>
+      <Route path="about" component={About} />
+      <Route path="applications" component={Applications} />
+      <Route path="groups" component={Groups} />
+      <Route path="people" component={People} />
+      <IndexRoute component={Home} />
+    </Route>
+  </Router>,
   document.getElementById('app')
 );
