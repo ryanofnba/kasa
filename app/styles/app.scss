@@ -130,7 +130,18 @@ html, body {
   text-align: center;
 }
 
+.announce-container {
+  display: flex;
+  flex-direction: column;
+}
 
+.announce-text {
+  flex: 4;
+}
+
+.announce-date {
+  flex: 1;
+}
 
 
 // Components
