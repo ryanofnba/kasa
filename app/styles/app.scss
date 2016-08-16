@@ -5,4 +5,27 @@
 @import "foundation";
 @include foundation-everything;
 
+
+
+//Nav Bar
+
+// Top bar background color
+$topbar-bg-color: #fff;
+$topbar-bg: $topbar-bg-color;
+
+.menu-text {
+  color: $white;
+  font-size: 40px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-banner {
+
+}
+
 // Components

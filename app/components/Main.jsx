@@ -8,6 +8,7 @@ class Main extends Component {
       <div>
         <Nav />
         {this.props.children}
+
       </div>
     );
   }

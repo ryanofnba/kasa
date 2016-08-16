@@ -19,31 +19,31 @@ class Nav extends Component {
         <div className="top-bar-left">
           <ul className="menu">
             <li className="menu-text">KASA</li>
-            <li className="has-form">
+            <li>
               <IndexLink
                 to="/"
                 activeClassName="active"
                 activeStyle={{fontWeight: 'bold'}}>HOME</IndexLink>
             </li>
-            <li className="has-form">
+            <li>
               <Link
                 to="/people"
                 activeClassName="active"
                 activeStyle={{fontWeight: 'bold'}}>PEOPLE</Link>
             </li>
-            <li class="has-form">
+            <li>
               <Link
                 to="/groups"
                 activeClassName="active"
                 activeStyle={{fontWeight: 'bold'}}>GROUPS</Link>
             </li>
-            <li className="has-form">
+            <li>
               <Link
                 to="/applications"
                 activeClassName="active"
                 activeStyle={{fontWeight: 'bold'}}>APPLICATIONS</Link>
             </li>
-            <li className="has-form">
+            <li>
               <Link
                 to="/about"
                 activeClassName="active"
