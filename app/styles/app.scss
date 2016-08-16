@@ -24,7 +24,7 @@ $topbar-bg: $topbar-bg-color;
 }
 
 .page-title {
-  padding-top: 100px;
+  height:100px;
 }
 
 html, body {
@@ -58,8 +58,9 @@ html, body {
   align-items: center;
   justify-content: center;;
   flex: 9;
-  margin-top: 20px;
   margin: 100px;
+  margin-top: 0;
+
   background-color: $grey;
   border-radius: 5px;
   min-height:40%;
