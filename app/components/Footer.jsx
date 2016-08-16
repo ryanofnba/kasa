@@ -1,23 +1,39 @@
 import React, { Component } from 'react';
+import { Link, IndexLink } from 'react-router';
 
 class Footer extends Component {
   render() {
     return (
       <div className="footer">
         <div>
-          <a href="">Home</a>
+          <IndexLink
+            to="/"
+            activeClassName="active"
+            activeStyle={{fontWeight: 'bold'}}>HOME</IndexLink>
         </div>
         <div>
-          <a href="">People</a>
+          <Link
+            to="/people"
+            activeClassName="active"
+            activeStyle={{fontWeight: 'bold'}}>PEOPLE</Link>
         </div>
         <div>
-          <a href="">Groups</a>
+          <Link
+            to="/groups"
+            activeClassName="active"
+            activeStyle={{fontWeight: 'bold'}}>GROUPS</Link>
         </div>
         <div>
-          <a href="">Applications</a>
+          <Link
+            to="/applications"
+            activeClassName="active"
+            activeStyle={{fontWeight: 'bold'}}>APPLICATIONS</Link>
         </div>
         <div>
-          <a href="">About</a>
+          <Link
+            to="/about"
+            activeClassName="active"
+            activeStyle={{fontWeight: 'bold'}}>ABOUT</Link>
         </div>
       </div>
     );

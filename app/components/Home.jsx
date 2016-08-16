@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Banner from 'Banner';
 import Announcements from 'Announcements';
 import HomeBottom from 'HomeBottom';
-import Footer from 'Footer';
 
 class Home extends Component {
   render() {
@@ -14,7 +13,7 @@ class Home extends Component {
           <h1 className="page-title text-center">Announcements</h1>
         </div>
         <Announcements />
-        <Footer />
+
       </div>
     );
   };

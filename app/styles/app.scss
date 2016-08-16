@@ -45,6 +45,7 @@ html, body {
   display: flex;
   flex-direction: column;
   height: 100%;
+
 }
 
 .banner-container {
@@ -60,10 +61,26 @@ html, body {
   margin-top: 20px;
   margin: 100px;
   background-color: $grey;
+  border-radius: 5px;
 }
 
 .announcements-container > div {
   flex: 1;
+  border: 1px solid $grey;
+  border-radius: 5px;
+  width: 100%;
+  align-items: center;
+  cursor: cell;
+  display: flex;
+  padding: 1rem;
+  transition: background .3s ease;
+  border-bottom: 1px solid #2ba6cb;
+
+
+  &:hover {
+    background: $white;
+    color: black;
+  }
 }
 
 .home-bottom-container {
