@@ -51,20 +51,16 @@ class Nav extends Component {
             </li>
           </ul>
         </div>
+
+
+
         <div className="top-bar-right">
-          <form onSubmit={this.onSignIn}>
-            <ul className="menu">
-              <li>
-                <input type="text" placeholder="Username" />
-              </li>
-              <li>
-                <input type="text" placeholder="Password" />
-              </li>
-              <li>
-                <input type="submit" className="button" value="Sign in"/>
-              </li>
-            </ul>
-          </form>
+          <div class="icon-bar one-up">
+            <a class="item" href="https://www.facebook.com/profile.php?id=100005110844639">
+              <img src="http://img.informer.com/icons/png/48/4177/4177118.png" />
+            </a>
+          </div>
+
         </div>
       </div>
     );
@@ -72,3 +68,24 @@ class Nav extends Component {
 }
 
 export default Nav;
+
+// <form onSubmit={this.onSignIn}>
+//   <ul className="menu">
+//     <li>
+//       <div class="icon-bar one-up">
+//         <a class="item" href="https://www.facebook.com/profile.php?id=100005110844639">
+//           <img src="http://img.informer.com/icons/png/48/4177/4177118.png" />
+//         </a>
+//       </div>
+//     </li>
+//     <li>
+//       <input type="text" placeholder="Username" />
+//     </li>
+//     <li>
+//       <input type="password" placeholder="Password" />
+//     </li>
+//     <li>
+//       <input type="submit" className="button" value="Sign in"/>
+//     </li>
+//   </ul>
+// </form>

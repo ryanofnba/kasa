@@ -23,6 +23,10 @@ $topbar-bg: $topbar-bg-color;
   max-height: 300px;
 }
 
+.page-title {
+  padding-top: 100px;
+}
+
 html, body {
   background-color: $dark-gray;
   color: #2ba6cb;
@@ -53,6 +57,7 @@ html, body {
   align-items: center;
   justify-content: center;;
   flex: 9;
+  margin-top: 20px;
   margin: 100px;
   background-color: $grey;
 }
