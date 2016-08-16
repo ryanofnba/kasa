@@ -18,14 +18,91 @@ $topbar-bg: $topbar-bg-color;
   font-size: 40px;
 }
 
+.home-banner {
+  width: 90%;
+  max-height: 300px;
+}
+
+html, body {
+  background-color: $dark-gray;
+  color: #2ba6cb;
+}
+
+#app {
+  height: 90%;
+}
+
+.main, .wrapper {
+  height: 100%;
+  background-color: $dark-gray;
+}
+
 .home-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 100%;
 }
 
-.home-banner {
-
+.banner-container {
+  flex: 2;
 }
+
+.announcements-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;;
+  flex: 9;
+  margin: 100px;
+  background-color: $grey;
+}
+
+.announcements-container > div {
+  flex: 1;
+}
+
+.home-bottom-container {
+  color: $white;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  flex: 2;
+}
+
+.home-bottom-left {
+  flex: 1;
+}
+
+#leftImage, #middleImage, #rightImage {
+  display: block;
+  margin: auto;
+  height: auto;
+  max-height: 100%;
+
+  width: auto;
+  width: 100%;
+}
+
+.home-bottom-middle {
+  flex: 2;
+}
+
+.home-bottom-right {
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.footer > div {
+  flex: 1;
+  text-align: center;
+}
+
+
+
 
 // Components

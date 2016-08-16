@@ -5,10 +5,11 @@ import Nav from 'Nav';
 class Main extends Component {
   render() {
     return (
-      <div>
+      <div className="main">
         <Nav />
-        {this.props.children}
-
+        <div className="wrapper">
+            {this.props.children}
+        </div>
       </div>
     );
   }
