@@ -29,6 +29,14 @@ class LinkPanel extends Component {
             <img  src={'https://scontent.fsnc1-3.fna.fbcdn.net/t31.0-8/12916932_551431438370546_7283733245991238353_o.jpg'}
               alt="banner"/>
           </div>
+          <div className="link-pannel-image3">
+            <img  src={'https://scontent.fsnc1-3.fna.fbcdn.net/t31.0-8/12440650_551431441703879_4705577252132198765_o.jpg'}
+              alt="banner"/>
+          </div>
+          <div className="link-pannel-image3">
+            <img  src={'https://scontent.fsnc1-3.fna.fbcdn.net/t31.0-8/12967529_555755204604836_3476159760272546734_o.jpg'}
+              alt="banner"/>
+          </div>
         </div>
       </div>
     );
