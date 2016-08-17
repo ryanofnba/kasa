@@ -16,3 +16,12 @@ export const announcementsReducer = (state = [], action) => {
       return state;
   }
 };
+
+export const familyReducer = (state = 'RBL', action) => {
+  switch (action.type) {
+    case 'CHANGE_FAMILY':
+      return action.family;
+    default:
+      return state;
+  }
+};

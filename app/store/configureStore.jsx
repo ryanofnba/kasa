@@ -1,12 +1,14 @@
 const redux = require('redux');
 
 import {
-  announcementsReducer
+  announcementsReducer,
+  familyReducer
 } from 'reducers';
 
 export const configure = (initialState = {}) => {
   const reducer = redux.combineReducers({
-    announcements: announcementsReducer
+    announcements: announcementsReducer,
+    familyView: familyReducer
   });
 
   const store = redux.createStore(reducer, initialState, redux.compose(

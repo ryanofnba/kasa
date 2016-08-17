@@ -33,6 +33,19 @@ store.dispatch(actions.addAnnouncement(announce1));
 store.dispatch(actions.addAnnouncement(announce2));
 store.dispatch(actions.addAnnouncement(announce3));
 store.dispatch(actions.addAnnouncement(announce4));
+store.dispatch(actions.addAnnouncement(announce1));
+store.dispatch(actions.addAnnouncement(announce1));
+store.dispatch(actions.addAnnouncement(announce1));
+store.dispatch(actions.addAnnouncement(announce1));
+store.dispatch(actions.addAnnouncement(announce1));
+
+// const family1 = 'RBL';
+// const family2 = 'LG';
+// const family3 = 'Accident';
+//
+// store.dispatch(actions.changeFamily(family1));
+// store.dispatch(actions.changeFamily(family2));
+// store.dispatch(actions.changeFamily(family3));
 
 // Load foundation
 $(document).foundation();

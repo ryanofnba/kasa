@@ -4,3 +4,10 @@ export const addAnnouncement = text => {
     text
   };
 };
+
+export const changeFamily = family => {
+  return {
+    type: 'CHANGE_FAMILY',
+    family
+  };
+};
