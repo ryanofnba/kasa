@@ -15,8 +15,11 @@ class Announcements extends Component {
     };
 
     return (
-      <div className="announcements-container">
-        {renderAnnoucements()}
+      <div className="announcements-container callout">
+        <h1 className="announcement-title">Announcements</h1>
+        <div className="announcements-list">
+          {renderAnnoucements()}
+        </div>
       </div>
     );
   }

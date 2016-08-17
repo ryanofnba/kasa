@@ -9,9 +9,7 @@ class Main extends Component {
     return (
       <div className="main">
         <Nav />
-        <div className="wrapper">
-            {this.props.children}
-        </div>
+        {this.props.children}
         <Footer />
       </div>
     );

@@ -9,11 +9,7 @@ class Home extends Component {
     return (
       <div className="home-container">
         <Banner />
-        <div>
-          <h1 className="page-title text-center">Announcements</h1>
-        </div>
         <Announcements />
-
       </div>
     );
   };
