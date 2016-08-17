@@ -63,16 +63,19 @@ html, body, #app, .main {
   display: flex;
   display:-webkit-flex;
   flex-direction: row;
+
   flex: 1;
   a {
-    flex: 1;
-  }
+      flex: 1;
+    }
 }
 
 .link-images-container {
   overflow-y:auto;
   flex-direction: column;
   flex:3;
+
+
 }
 
 .link-images-container > div {

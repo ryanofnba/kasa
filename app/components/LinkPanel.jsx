@@ -10,10 +10,10 @@ class LinkPanel extends Component {
       <div className="link-panel-container">
           <div className="link-group">
             <a class="button" href="https://www.facebook.com/profile.php?id=100005110844639">
-              <img src="http://harousa.org/wp-content/uploads/2015/06/facebook-icon-2-200x200.png" />
+              <img class="sociamediaimage" src="http://harousa.org/wp-content/uploads/2015/06/facebook-icon-2-200x200.png" />
             </a>
             <a class="button" href="https://www.instagram.com/cpslokasa/?hl=en">
-              <img src="http://3835642c2693476aa717-d4b78efce91b9730bcca725cf9bb0b37.r51.cf1.rackcdn.com/Instagram_App_Large_May2016_200.png" />
+              <img class="socialmediaimage" src="http://3835642c2693476aa717-d4b78efce91b9730bcca725cf9bb0b37.r51.cf1.rackcdn.com/Instagram_App_Large_May2016_200.png" />
             </a>
           </div>
         <div className="link-images-container">
