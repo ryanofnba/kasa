@@ -10,23 +10,20 @@
 //Nav Bar
 
 // Top bar background color
-$topbar-bg-color: #fff;
-$topbar-bg: $topbar-bg-color;
+.top-bar, .top-bar-left, .top-bar-right {
+  background-color: #009688;
+}
 
 .menu-text {
   color: $white;
-  font-size: 40px;
 }
 
 html, body, #app, .main {
   height: 100%;
-  background-color: #ffe6cc;
-  color: #574e42;
+  background-color: #FFFFFF;
+  color: #212121;
 }
 
-.top-bar {
-
-}
 // Home Container
 .home-container {
   display: flex;
@@ -36,8 +33,10 @@ html, body, #app, .main {
 }
 
 .banner-container {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  padding: 1rem;
+  background-color: #009688;
 }
 
 .home-body {
@@ -89,6 +88,8 @@ html, body, #app, .main {
   flex: 3;
   margin-top: 2rem;
   margin-right: 2rem;
+  background-color: #009688;
+
 
 
   h1 {
@@ -96,23 +97,29 @@ html, body, #app, .main {
   }
 
   >div>div {
-    border: 1px solid #2ba6cb;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
   }
 }
 
 .announcements-list {
   overflow-y: auto;
-  background-color: #e9e6e2;
+  background-color: #FFFFFF;
+
 
 }
 
+.announcement-title {
+  color: #FFFFFF;
+}
+
 .announcements-list > div {
-  color: #2ba6cb;
+  color: #212121;
   transition: background .3s ease;
 
   &:hover {
-    background: $pink;
-    font-weight: bold;
+    background: #B2EBF2;
+
   };
 
 }
@@ -123,6 +130,28 @@ html, body, #app, .main {
   display:-webkit-flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.footer-text {
+  color: #212121;
+}
+
+//TreeLayout
+.linage {
+    fill: none;
+    stroke: black;
+}
+.marriage {
+    fill: none;
+    stroke: black;
+}
+.node {
+    background-color: lightblue;
+    border-style: solid;
+    border-width: 1px;
+}
+.nodeText{
+    font: 10px sans-serif;
 }
 
 // .home-banner {

@@ -18,36 +18,40 @@ class Nav extends Component {
       <div className="top-bar">
         <div className="top-bar-left">
           <ul className="menu">
-            <li className="menu-text">KASA</li>
             <li>
               <IndexLink
+                className="menu-text"
                 to="/"
                 activeClassName="active"
-                activeStyle={{fontWeight: 'bold'}}>HOME</IndexLink>
+                activeStyle={{fontWeight: 'bold', color: '#757575'}}>KASA</IndexLink>
             </li>
             <li>
               <Link
+                className="menu-text"
                 to="/people"
                 activeClassName="active"
-                activeStyle={{fontWeight: 'bold'}}>PEOPLE</Link>
+                activeStyle={{fontWeight: 'bold', color: '#757575'}}>PEOPLE</Link>
             </li>
             <li>
               <Link
+                className="menu-text"
                 to="/groups"
                 activeClassName="active"
-                activeStyle={{fontWeight: 'bold'}}>GROUPS</Link>
+                activeStyle={{fontWeight: 'bold', color: '#757575'}}>GROUPS</Link>
             </li>
             <li>
               <Link
+                className="menu-text"
                 to="/applications"
                 activeClassName="active"
-                activeStyle={{fontWeight: 'bold'}}>APPLICATIONS</Link>
+                activeStyle={{fontWeight: 'bold', color: '#757575'}}>APPLICATIONS</Link>
             </li>
             <li>
               <Link
+                className="menu-text"
                 to="/about"
                 activeClassName="active"
-                activeStyle={{fontWeight: 'bold'}}>ABOUT</Link>
+                activeStyle={{fontWeight: 'bold', color: '#757575'}}>ABOUT</Link>
             </li>
           </ul>
         </div>
