@@ -124,6 +124,47 @@ html, body, #app, .main {
 
 }
 
+//People
+.people-container {
+  display: flex;
+  display:-webkit-flex;
+  flex-direction: column;
+  height: 90%;
+  background-color: #FFFFFF;
+  color: #FFFFFF;
+}
+
+.family-nav-buttons {
+  display: flex;
+  display:-webkit-flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.family-container {
+
+  flex: 1;
+  background-color: #009688;
+  margin: 2rem;
+}
+
+.tree-container {
+  display: flex;
+  display:-webkit-flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.family-title {
+  text-align: center;
+}
+
+.rbl-tree, .lg-tree, .accident-tree {
+  flex: 1;
+  background-color: #B2EBF2;
+  margin: 1rem;
+}
+
 
 .footer {
   display: flex;
@@ -137,22 +178,21 @@ html, body, #app, .main {
 }
 
 //TreeLayout
-svg {
-  margin-top: 32px;
-  border: 1px solid #aaa;
+#cy {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
-.person rect {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 1px;
-}
-.person {
-  font: 14px sans-serif;
-}
-.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 1.5px;
+
+#eat {
+  position: absolute;
+  left: 1em;
+  top: 1em;
+  font-size: 1em;
+  z-index: -1;
+  color: #c88;
 }
 
 

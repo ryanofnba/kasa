@@ -119,19 +119,11 @@ class LG extends Component {
   }
 
   render() {
-    const style = {
-      backgroundColor: '#DAE4E4',
-      border: 'solid 1px black',
-      width: '100%',
-      height: '600px'
-    };
-
     return (
-      <div className="text-center">
-        <h1>LG</h1>
-        <p>Ryan and Chen are the best</p>
-        <div id="myDiagramDiv"
-          style={style}>
+      <div className="tree-container">
+        <h1 className="family-title">LG</h1>
+        <div className="lg-tree">
+          This is where the tree is
         </div>
       </div>
     );

@@ -18,7 +18,7 @@ class AddAnnouncement extends Component {
 
     if (announceText.length > 0) {
       this.refs.announceText.value = '';
-      dispatch(actions.addAnnouncement(announceText));
+      dispatch(actions.startAddAnnouncement(announceText));
     }
     else {
       this.refs.announceText.focus();

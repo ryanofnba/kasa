@@ -32,7 +32,7 @@ class People extends Component {
 
     return (
       <div className="people-container">
-        <div className="nav-buttons">
+        <div className="family-nav-buttons nav-buttons">
           <button
             className="button"
             onClick={() => { dispatch(actions.changeFamily('RBL')) }}

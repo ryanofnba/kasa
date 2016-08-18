@@ -6,11 +6,12 @@ export const announcementsReducer = (state = [], action) => {
     case 'ADD_ANNOUNCEMENT':
       return [
         ...state,
-        {
-          id: uuid(),
-          text: action.text,
-          date: moment().unix()
-        }
+        action.announcement
+      ];
+    case 'ADD_ANNOUNCEMENTS':
+      return [
+        ...state,
+        ...action.announcements
       ];
     default:
       return state;
