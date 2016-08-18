@@ -115,7 +115,7 @@ class LG extends Component {
   }
 
   componentDidMount() {
-    this.renderTree();
+    //this.renderTree();
   }
 
   render() {
