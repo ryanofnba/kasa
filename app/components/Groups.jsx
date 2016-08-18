@@ -55,4 +55,6 @@ class Groups extends Component {
   };
 }
 
-export default Groups;
+export default connect((state) => {
+  return state;
+})(Groups);
