@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import go from 'gojs';
 
 class LG extends Component {
   renderTree() {

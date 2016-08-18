@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import cytoscape from 'cytoscape';
 
 class RBL extends Component {
   constructor(props) {
