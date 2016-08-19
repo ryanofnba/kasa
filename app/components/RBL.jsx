@@ -1,173 +1,83 @@
 import React, { Component } from 'react';
+import joint from 'jointjs';
+import ReactDOM from 'react-dom';
 
 class RBL extends Component {
   constructor(props) {
     super(props);
-
     this.renderTree = this.renderTree.bind(this);
   }
 
   renderTree() {
-    var cy = cytoscape({
-  container: document.getElementById('cy'),
+    var graph = new joint.dia.Graph();
 
-  boxSelectionEnabled: false,
-  autounselectify: true,
-
-  style: cytoscape.stylesheet()
-    .selector('node')
-      .css({
-        'height': 80,
-        'width': 80,
-        'background-fit': 'cover',
-        'border-color': '#000',
-        'border-width': 3,
-        'border-opacity': 0.5
-      })
-    .selector('.eating')
-      .css({
-        'border-color': 'red'
-      })
-    .selector('.eater')
-      .css({
-        'border-width': 9
-      })
-    .selector('edge')
-      .css({
-        'width': 6,
-        'target-arrow-shape': 'triangle',
-        'line-color': '#ffaaaa',
-        'target-arrow-color': '#ffaaaa',
-        'curve-style': 'bezier'
-      })
-    .selector('#bird')
-      .css({
-        'background-image': 'https://farm8.staticflickr.com/7272/7633179468_3e19e45a0c_b.jpg'
-      })
-    .selector('#cat')
-      .css({
-        'background-image': 'https://farm2.staticflickr.com/1261/1413379559_412a540d29_b.jpg'
-      })
-    .selector('#ladybug')
-      .css({
-        'background-image': 'https://farm4.staticflickr.com/3063/2751740612_af11fb090b_b.jpg'
-      })
-  .selector('#aphid')
-      .css({
-        'background-image': 'https://farm9.staticflickr.com/8316/8003798443_32d01257c8_b.jpg'
-      })
-  .selector('#rose')
-      .css({
-        'background-image': 'https://farm6.staticflickr.com/5109/5817854163_eaccd688f5_b.jpg'
-      })
-  .selector('#grasshopper')
-      .css({
-        'background-image': 'https://farm7.staticflickr.com/6098/6224655456_f4c3c98589_b.jpg'
-      })
-  .selector('#plant')
-      .css({
-        'background-image': 'https://farm1.staticflickr.com/231/524893064_f49a4d1d10_z.jpg'
-      })
-  .selector('#wheat')
-      .css({
-        'background-image': 'https://farm3.staticflickr.com/2660/3715569167_7e978e8319_b.jpg'
-      }),
-
-  elements: {
-    nodes: [
-      { data: { id: 'cat' } },
-      { data: { id: 'bird' } },
-      { data: { id: 'ladybug' } },
-      { data: { id: 'aphid' } },
-      { data: { id: 'rose' } },
-      { data: { id: 'grasshopper' } },
-      { data: { id: 'plant' } },
-      { data: { id: 'wheat' } }
-    ],
-    edges: [
-      { data: { source: 'cat', target: 'bird' } },
-      { data: { source: 'bird', target: 'ladybug' } },
-      { data: { source: 'bird', target: 'grasshopper' } },
-      { data: { source: 'grasshopper', target: 'plant' } },
-      { data: { source: 'grasshopper', target: 'wheat' } },
-      { data: { source: 'ladybug', target: 'aphid' } },
-      { data: { source: 'aphid', target: 'rose' } }
-    ]
-  },
-
-  layout: {
-    name: 'breadthfirst',
-    directed: true,
-    padding: 10
-  }
-}); // cy init
-
-cy.on('tap', 'node', function(){
-  var nodes = this;
-  var tapped = nodes;
-  var food = [];
-
-  nodes.addClass('eater');
-
-  for(;;){
-    var connectedEdges = nodes.connectedEdges(function(){
-      return !this.target().anySame( nodes );
+    var paper = new joint.dia.Paper({
+        el: ReactDOM.findDOMNode(this.refs.placeholder),
+        width: 1000,
+        height: 1000,
+        gridSize: 1,
+        model: graph,
+        perpendicularLinks: true,
+        restrictTranslate: true,
+        interactive: false
     });
 
-    var connectedNodes = connectedEdges.targets();
+    var member = function(x, y, rank, name, image, background, textColor) {
 
-    Array.prototype.push.apply( food, connectedNodes );
+        textColor = textColor || "#000";
 
-    nodes = connectedNodes;
+        var cell = new joint.shapes.org.Member({
+            position: { x: x, y: y },
+            attrs: {
+                '.card': { fill: background, stroke: 'none'},
+                  image: { 'xlink:href': 'https://scontent.fsnc1-3.fna.fbcdn.net/t31.0-8/12916932_551431438370546_7283733245991238353_o.jpg', opacity: 0.7 },
+                '.rank': { text: rank, fill: textColor, 'word-spacing': '-5px', 'letter-spacing': 0},
+                '.name': { text: name, fill: textColor, 'font-size': 13, 'font-family': 'Arial', 'letter-spacing': 0 }
+            }
+        });
+        graph.addCell(cell);
+        return cell;
+    };
 
-    if( nodes.empty() ){ break; }
-  }
+    function link(source, target, breakpoints) {
 
-  var delay = 0;
-  var duration = 500;
-  for( var i = food.length - 1; i >= 0; i-- ){ (function(){
-    var thisFood = food[i];
-    var eater = thisFood.connectedEdges(function(){
-      return this.target().same(thisFood);
-    }).source();
+        var cell = new joint.shapes.org.Arrow({
+            source: { id: source.id },
+            target: { id: target.id },
+            // vertices: breakpoints,
+            attrs: {
+                '.connection': {
+                    'fill': 'none',
+                    // 'stroke-linejoin': 'round',
+                    'stroke-width': '1',
+                    'stroke': '#4b4a67'
+                }
+            }
 
-    thisFood.delay( delay, function(){
-      eater.addClass('eating');
-    } ).animate({
-      position: eater.position(),
-      css: {
-        'width': 10,
-        'height': 10,
-        'border-width': 0,
-        'opacity': 0
-      }
-    }, {
-      duration: duration,
-      complete: function(){
-        thisFood.remove();
-      }
-    });
+        });
+        graph.addCell(cell);
+        return cell;
+    }
 
-    delay += duration;
-  })(); } // for
+    var sean = member(300,70,'Stupid', 'Sean Nguyen', 'male.png', '#30d0c6');
+    var sean1 = member(90,200,'Stupider', 'Sean Nguyen 1', 'male.png', '#7c68fd', '#f1f1f1');
+    var sean2 = member(90,300,'Stupidest', 'Sean Nguyen 2', 'female.png', '#7c68fd', '#f1f1f1');
 
-}); // on tap
+    link(sean, sean1, [{x: 385, y: 180}]);
+    link(sean1, sean2, [{x: 385, y: 180}]);
 
   }
 
 
   componentDidMount() {
-    //this.renderTree();
+    this.renderTree();
   }
 
   render() {
-
     return (
       <div className="tree-container">
         <h1 className="family-title">RBL</h1>
-        <div className="rbl-tree">
-          This is where the tree is
-        </div>
+        <div className="rbl-tree" ref="placeholder"></div>
       </div>
     );
   }

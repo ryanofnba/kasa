@@ -259,23 +259,8 @@ html, body, #app, .main {
 
 
 //TreeLayout
-#cy {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-#eat {
-  position: absolute;
-  left: 1em;
-  top: 1em;
-  font-size: 1em;
-  z-index: -1;
-  color: #c88;
-}
-
+.link-tools .tool-remove { display: none }
+.link-tools .tool-options { display: none }
 
 // .home-banner {
 //   width: 90%;
