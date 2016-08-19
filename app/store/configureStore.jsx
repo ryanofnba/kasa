@@ -5,7 +5,8 @@ import {
   announcementsReducer,
   familyReducer,
   authStateReducer,
-  authUIDReducer
+  authUIDReducer,
+  eventReducer
 } from 'reducers';
 
 export const configure = (initialState = {}) => {
@@ -13,7 +14,8 @@ export const configure = (initialState = {}) => {
     authState: authStateReducer,
     announcements: announcementsReducer,
     familyView: familyReducer,
-    uid: authUIDReducer
+    uid: authUIDReducer,
+    events: eventReducer
   });
 
   const store = redux.createStore(reducer, initialState, redux.compose(

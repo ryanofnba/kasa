@@ -60,16 +60,16 @@ class Nav extends Component {
             <li>
               <Link
                 className="menu-text"
-                to="/people"
+                to="/kasaevents"
                 activeClassName="active"
-                activeStyle={{fontWeight: 'bold', color: '#757575'}}>PEOPLE</Link>
+                activeStyle={{fontWeight: 'bold', color: '#757575'}}>EVENTS</Link>
             </li>
             <li>
               <Link
                 className="menu-text"
-                to="/groups"
+                to="/families"
                 activeClassName="active"
-                activeStyle={{fontWeight: 'bold', color: '#757575'}}>GROUPS</Link>
+                activeStyle={{fontWeight: 'bold', color: '#757575'}}>FAMILIES</Link>
             </li>
             <li>
               <Link

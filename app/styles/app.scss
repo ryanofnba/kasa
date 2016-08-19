@@ -159,10 +159,11 @@ html, body, #app, .main {
   text-align: center;
 }
 
-.rbl-tree, .lg-tree, .accident-tree {
+.rbl-tree, .lg-tree, .accident-tree, .event-tree {
   flex: 1;
   background-color: #B2EBF2;
   margin: 1rem;
+  color: #212121;
 }
 
 

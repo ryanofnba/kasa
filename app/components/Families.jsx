@@ -13,7 +13,8 @@ import LG from 'LG';
 import Accident from 'Accident';
 import SideNav from 'SideNav';
 
-class People extends Component {
+
+class Families extends Component {
 
   render() {
     const { familyView, dispatch } = this.props;
@@ -56,4 +57,4 @@ class People extends Component {
 
 export default connect((state) => {
   return state;
-})(People);
+})(Families);

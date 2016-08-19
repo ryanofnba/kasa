@@ -27,6 +27,15 @@ export const familyReducer = (state = 'RBL', action) => {
   }
 };
 
+export const eventReducer = (state = 'Passings', action) => {
+  switch (action.type) {
+    case 'CHANGE_EVENT':
+      return action.events;
+    default:
+      return state;
+  }
+};
+
 export const authStateReducer = (state = false, action) => {
   switch (action.type) {
     case 'CHANGE_AUTH_STATE':

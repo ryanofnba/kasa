@@ -12,8 +12,8 @@ import Main from 'Main';
 import Home from 'Home';
 import About from 'About';
 import Applications from 'Applications';
-import Groups from 'Groups';
-import People from 'People';
+import Families from 'Families';
+import KasaEvents from 'KasaEvents';
 const actions = require('actions');
 //Redux
 const store = require('configureStore').configure();
@@ -27,13 +27,14 @@ store.subscribe(() => {
   console.log('New State', state);
 });
 
-//Fetch data
-store.dispatch(actions.startAddAnnouncements());
 
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
     store.dispatch(actions.login(user.uid));
     store.dispatch(actions.changeAuthState(true));
+
+    //Fetch data
+    store.dispatch(actions.startAddAnnouncements());
   }
   else {
     store.dispatch(actions.logout());
@@ -53,8 +54,8 @@ ReactDOM.render(
       <Route path="/" component={Main}>
         <Route path="about" component={About} />
         <Route path="applications" component={Applications} />
-        <Route path="groups" component={Groups} />
-        <Route path="people" component={People} />
+        <Route path="families" component={Families} />
+        <Route path="kasaevents" component={KasaEvents} />
         <IndexRoute component={Home} />
       </Route>
     </Router>

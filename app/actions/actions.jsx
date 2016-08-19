@@ -14,8 +14,8 @@ export const startAddAnnouncement = text => {
       text,
       date: moment().unix()
     };
-
-    const announcementRef = firebaseRef.child('announcements').push(announcement);
+    const uid = getState().uid.uid;
+    const announcementRef = firebaseRef.child(`users/${uid}/announcements`).push(announcement);
 
     return announcementRef.then(() => {
       dispatch(addAnnouncement({
@@ -35,7 +35,8 @@ export const addAnnouncements = announcements => {
 
 export const startAddAnnouncements = () => {
   return (dispatch, getState) => {
-    const announcementsRef = firebaseRef.child('announcements');
+    const uid = getState().uid.uid;
+    const announcementsRef = firebaseRef.child(`users/${uid}/announcements`);
 
     announcementsRef.once('value').then(snapshot => {
       const announcements = snapshot.val() || {};
@@ -57,6 +58,13 @@ export const changeFamily = family => {
   return {
     type: 'CHANGE_FAMILY',
     family
+  };
+};
+
+export const changeEvent = events => {
+  return {
+    type: 'CHANGE_EVENT',
+    events
   };
 };
 
