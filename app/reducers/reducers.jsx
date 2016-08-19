@@ -13,6 +13,8 @@ export const announcementsReducer = (state = [], action) => {
         ...state,
         ...action.announcements
       ];
+    case 'LOGOUT':
+      return [];
     default:
       return state;
   }

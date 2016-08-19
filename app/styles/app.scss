@@ -54,27 +54,18 @@ html, body, #app, .main {
   margin-left: 2rem;
   margin-bottom: 1rem;
   margin-right: 1rem;
-
-  justify-content: space-between;
 }
 
 .link-group {
   display: flex;
   display:-webkit-flex;
   flex-direction: row;
-
-  flex: 1;
-  a {
-      flex: 1;
-    }
 }
 
 .link-images-container {
   overflow-y:auto;
   flex-direction: column;
-  flex:3;
-
-
+  flex: 2;
 }
 
 .link-images-container > div {
@@ -177,6 +168,90 @@ html, body, #app, .main {
 .footer-text {
   color: #212121;
 }
+
+//About
+.about {
+  display: flex;
+  display:-webkit-flex;
+  flex-direction: column;;
+  height: 90%;
+}
+
+.about-title {
+
+  h1 {
+    text-align: center;
+  }
+}
+
+.about-container {
+  display: flex;
+  display:-webkit-flex;
+  flex-direction: row;
+  background-color: #009688;
+  flex: 1;
+  margin: 2rem;
+  overflow-y: scroll;
+}
+
+.board-container {
+  display: flex;
+  display:-webkit-flex;
+  flex-direction: column;
+  flex: 2;
+  padding: 1rem;
+
+  h4 {
+    text-align: center;
+    color: #ffffff;
+  }
+}
+
+.about-text-container {
+  flex: 1;
+  background-color: #B2EBF2;
+}
+
+.board-container1 {
+  display: flex;
+  display:-webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.boards {
+  flex: 1;
+  img {
+    display: block;
+    margin: auto;
+    height: 150px;
+    width: 150px;
+  }
+}
+
+.board-container2 {
+  display: flex;
+  display:-webkit-flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.about-name {
+  text-align: center;
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  color: #ffffff;
+  font: 1.5em Georgia, "Bitstream Charter", "URW Bookman L", "Century Schoolbook L", serif;
+}
+
+.about-position {
+  text-align: center;
+  color: hsl(80, 70%, 35%);
+  text-shadow: 1px 1px 2px black, 0 0 1em blue, 0 0 0.2em blue;
+  font: 1em Georgia, "Bitstream Charter", "URW Bookman L", "Century Schoolbook L", serif;
+}
+
 
 //TreeLayout
 #cy {
