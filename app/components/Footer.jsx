@@ -15,16 +15,16 @@ class Footer extends Component {
         <div>
           <Link
             className="footer-text"
-            to="/people"
+            to="/kasaevents"
             activeClassName="active"
-            activeStyle={{fontWeight: 'bold', color: '#757575'}}>PEOPLE</Link>
+            activeStyle={{fontWeight: 'bold', color: '#757575'}}>Events</Link>
         </div>
         <div>
           <Link
             className="footer-text"
-            to="/groups"
+            to="/families"
             activeClassName="active"
-            activeStyle={{fontWeight: 'bold', color: '#757575'}}>GROUPS</Link>
+            activeStyle={{fontWeight: 'bold', color: '#757575'}}>Families</Link>
         </div>
         <div>
           <Link

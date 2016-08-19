@@ -7,11 +7,20 @@ class Announcements extends Component {
     const { announcements } = this.props;
 
     const renderAnnoucements = () => {
-      return announcements.map(announcement => {
+
+      if (announcements.length > 0) {
+        return announcements.map(announcement => {
+          return (
+            <Announcement key={announcement.id} {...announcement} />
+          );
+        })
+      }
+      else {
         return (
-          <Announcement key={announcement.id} {...announcement} />
+          <div className="no-announcements">No Announcements</div>
         );
-      });
+      }
+
     };
 
     return (
