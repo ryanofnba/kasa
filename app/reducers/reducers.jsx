@@ -26,3 +26,25 @@ export const familyReducer = (state = 'RBL', action) => {
       return state;
   }
 };
+
+export const authStateReducer = (state = false, action) => {
+  switch (action.type) {
+    case 'CHANGE_AUTH_STATE':
+      return action.authState;
+    default:
+      return state;
+  }
+};
+
+export const authUIDReducer = (state = {}, action) => {
+  switch (action.type) {
+    case 'LOGIN':
+      return {
+        uid: action.uid
+      };
+    case 'LOGOUT':
+      return {};
+    default:
+      return state;
+  }
+};

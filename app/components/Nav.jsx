@@ -1,19 +1,51 @@
 import React, { Component } from 'react';
 import { Link, IndexLink } from 'react-router';
+import * as Redux from 'react-redux';
+import * as actions from 'actions';
+import firebase from 'app/firebase/';
 
 class Nav extends Component {
   constructor(props) {
     super(props);
 
-    this.onSignIn = this.onSignIn.bind(this);
+    this.onLogin = this.onLogin.bind(this);
+    this.onLogout = this.onLogout.bind(this);
   }
 
-  onSignIn(event) {
-    event.preventDefault();
-    alert('Not Implemented Yet');
+  onLogin(event) {
+    const { dispatch } = this.props;
+
+    dispatch(actions.startLogin());
+  }
+  onLogout(event) {
+    const { dispatch } = this.props;
+
+    dispatch(actions.startLogout());
+  }
+
+  renderLogging() {
+
   }
 
   render() {
+
+    const { authState, dispatch } = this.props;
+
+    const renderLogging = () => {
+      if (authState === false) {
+        return (<li>
+                <button className="button"
+                onClick={this.onLogin}>Signin with Facebook</button>
+            </li>);
+      }
+      else {
+        return (<li>
+                <button className="button"
+                onClick={this.onLogout}>Logout</button>
+              </li>);
+      }
+    };
+
     return (
       <div className="top-bar">
         <div className="top-bar-left">
@@ -56,12 +88,20 @@ class Nav extends Component {
           </ul>
         </div>
 
+        <div className="top-bar-right">
+            <ul className="menu">
+              {renderLogging()}
+            </ul>
+        </div>
+
       </div>
     );
   }
 }
 
-export default Nav;
+export default Redux.connect((state) => {
+  return state;
+})(Nav);
 
 
 // <div className="top-bar-right">

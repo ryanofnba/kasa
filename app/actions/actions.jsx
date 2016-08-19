@@ -1,4 +1,4 @@
-import firebase, { firebaseRef } from 'app/firebase/';
+import firebase, { firebaseRef, facebookProvider } from 'app/firebase/';
 import moment from 'moment';
 
 export const addAnnouncement = announcement => {
@@ -57,5 +57,44 @@ export const changeFamily = family => {
   return {
     type: 'CHANGE_FAMILY',
     family
+  };
+};
+
+export const changeAuthState = authState => {
+  console.log(authState);
+  return {
+    type: 'CHANGE_AUTH_STATE',
+    authState
+  };
+}
+
+export const startLogin = () => {
+  return (dispatch, getState) => {
+    return firebase.auth().signInWithPopup(facebookProvider).then(result => {
+      console.log('Auth Worked!', result);
+    }, error => {
+      console.log('Unable to auth', error);
+    });
+  };
+};
+
+export const login = uid => {
+  return {
+    type: 'LOGIN',
+    uid
+  };
+}
+
+export const startLogout = () => {
+  return (dispatch, getState) => {
+    return firebase.auth().signOut().then(() => {
+      console.log('Logged Out');
+    });
+  };
+};
+
+export const logout = () => {
+  return {
+    type: 'LOGOUT'
   };
 };

@@ -17,6 +17,10 @@ import People from 'People';
 const actions = require('actions');
 //Redux
 const store = require('configureStore').configure();
+import firebase from 'app/firebase/';
+
+
+
 
 store.subscribe(() => {
   const state = store.getState();
@@ -25,6 +29,17 @@ store.subscribe(() => {
 
 //Fetch data
 store.dispatch(actions.startAddAnnouncements());
+
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    store.dispatch(actions.login(user.uid));
+    store.dispatch(actions.changeAuthState(true));
+  }
+  else {
+    store.dispatch(actions.logout());
+    store.dispatch(actions.changeAuthState(false));
+  }
+})
 
 // Load foundation
 $(document).foundation();

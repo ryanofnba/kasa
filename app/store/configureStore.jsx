@@ -3,13 +3,17 @@ import thunk from 'redux-thunk';
 
 import {
   announcementsReducer,
-  familyReducer
+  familyReducer,
+  authStateReducer,
+  authUIDReducer
 } from 'reducers';
 
 export const configure = (initialState = {}) => {
   const reducer = redux.combineReducers({
+    authState: authStateReducer,
     announcements: announcementsReducer,
-    familyView: familyReducer
+    familyView: familyReducer,
+    uid: authUIDReducer
   });
 
   const store = redux.createStore(reducer, initialState, redux.compose(

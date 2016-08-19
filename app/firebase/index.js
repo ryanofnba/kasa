@@ -13,5 +13,6 @@ try {
 
 }
 
+export const facebookProvider = new firebase.auth.FacebookAuthProvider();
 export const firebaseRef = firebase.database().ref();
 export default firebase;
