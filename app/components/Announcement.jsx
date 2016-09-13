@@ -4,7 +4,7 @@ import moment from 'moment';
 
 class Announcement extends Component {
   render() {
-    const { text, date } = this.props;
+    const { text, date, level } = this.props;
 
     return (
       <div className="announce-container">
@@ -13,6 +13,7 @@ class Announcement extends Component {
         </div>
         <div className="announce-date">
           {moment.unix(date).format('MMM Do YYYY @ h:mm a')}
+          {'          ' + level}
         </div>
       </div>
     );

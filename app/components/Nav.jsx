@@ -23,13 +23,9 @@ class Nav extends Component {
     dispatch(actions.startLogout());
   }
 
-  renderLogging() {
-
-  }
-
   render() {
 
-    const { authState, dispatch } = this.props;
+    const { user, authState, dispatch } = this.props;
 
     const renderLogging = () => {
       if (authState === false) {
@@ -39,12 +35,33 @@ class Nav extends Component {
             </li>);
       }
       else {
-        return (<li>
+        return (
+              <li>
                 <button className="button"
                 onClick={this.onLogout}>Logout</button>
               </li>);
       }
     };
+
+    const renderUsername = () => {
+      if (authState === true) {
+        return (
+          <li>
+            <div className="userName">{user.username}</div>
+          </li>
+        );
+      }
+    }
+
+    const renderUserPhoto = () => {
+      if (authState === true) {
+        return (
+          <li>
+            <img src={user.photoURL} atl="userPhoto" className="userPhoto" />
+          </li>
+        );
+      }
+    }
 
     return (
       <div className="top-bar">
@@ -90,6 +107,7 @@ class Nav extends Component {
 
         <div className="top-bar-right">
             <ul className="menu">
+              {renderUserPhoto()}
               {renderLogging()}
             </ul>
         </div>

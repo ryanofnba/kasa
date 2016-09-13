@@ -15,10 +15,13 @@ class AddAnnouncement extends Component {
 
     const { dispatch } = this.props;
     const announceText = this.refs.announceText.value;
+    const announcement = {
+      text: announceText
+    };
 
     if (announceText.length > 0) {
       this.refs.announceText.value = '';
-      dispatch(actions.startAddAnnouncement(announceText));
+      dispatch(actions.startAddAnnouncement(announcement));
     }
     else {
       this.refs.announceText.focus();

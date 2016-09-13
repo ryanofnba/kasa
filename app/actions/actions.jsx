@@ -8,19 +8,20 @@ export const addAnnouncement = announcement => {
   };
 };
 
-export const startAddAnnouncement = text => {
+export const startAddAnnouncement = announce => {
   return (dispatch, getState) => {
     const announcement = {
-      text,
-      date: moment().unix()
+      ...announce,
+      date: moment().unix(),
+      level: 'admin'
     };
-    const uid = getState().uid.uid;
-    const announcementRef = firebaseRef.child(`users/${uid}/announcements`).push(announcement);
+    const uid = getState().user.uid;
+    const announcementRef = firebaseRef.child(`announcements`).push(announcement);
 
     return announcementRef.then(() => {
       dispatch(addAnnouncement({
         ...announcement,
-        id: announcementRef.key
+        id: announcementRef.key,
       }));
     });
   };
@@ -35,8 +36,8 @@ export const addAnnouncements = announcements => {
 
 export const startAddAnnouncements = () => {
   return (dispatch, getState) => {
-    const uid = getState().uid.uid;
-    const announcementsRef = firebaseRef.child(`users/${uid}/announcements`);
+    const uid = getState().user.uid;
+    const announcementsRef = firebaseRef.child(`announcements`);
 
     announcementsRef.once('value').then(snapshot => {
       const announcements = snapshot.val() || {};
@@ -53,6 +54,13 @@ export const startAddAnnouncements = () => {
     });
   };
 };
+
+// "users": {
+    //   "$user_id": {
+    //     ".read": "$user_id === auth.uid",
+    //       ".write": "$user_id === auth.uid"
+    //   }
+    // }
 
 export const changeFamily = family => {
   return {
@@ -86,10 +94,12 @@ export const startLogin = () => {
   };
 };
 
-export const login = uid => {
+export const login = (uid, username, photoURL) => {
   return {
     type: 'LOGIN',
-    uid
+    uid,
+    username,
+    photoURL
   };
 }
 

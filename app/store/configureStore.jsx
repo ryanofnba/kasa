@@ -14,7 +14,7 @@ export const configure = (initialState = {}) => {
     authState: authStateReducer,
     announcements: announcementsReducer,
     familyView: familyReducer,
-    uid: authUIDReducer,
+    user: authUIDReducer,
     events: eventReducer
   });
 

@@ -6,15 +6,15 @@ export const announcementsReducer = (state = [], action) => {
     case 'ADD_ANNOUNCEMENT':
       return [
         ...state,
-        action.announcement
+        action.announcement,
       ];
     case 'ADD_ANNOUNCEMENTS':
       return [
         ...state,
         ...action.announcements
       ];
-    case 'LOGOUT':
-      return [];
+    // case 'LOGOUT':
+    //   return [];
     default:
       return state;
   }
@@ -51,7 +51,9 @@ export const authUIDReducer = (state = {}, action) => {
   switch (action.type) {
     case 'LOGIN':
       return {
-        uid: action.uid
+        uid: action.uid,
+        username: action.username,
+        photoURL: action.photoURL
       };
     case 'LOGOUT':
       return {};

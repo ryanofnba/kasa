@@ -27,20 +27,17 @@ store.subscribe(() => {
   console.log('New State', state);
 });
 
-
+store.dispatch(actions.startAddAnnouncements());
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
-    store.dispatch(actions.login(user.uid));
+    store.dispatch(actions.login(user.uid, user.displayName, user.photoURL));
     store.dispatch(actions.changeAuthState(true));
-
-    //Fetch data
-    store.dispatch(actions.startAddAnnouncements());
   }
   else {
     store.dispatch(actions.logout());
     store.dispatch(actions.changeAuthState(false));
   }
-})
+});
 
 // Load foundation
 $(document).foundation();
